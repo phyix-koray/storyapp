@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 260 25% 12%;
+    --foreground: 0 0% 96%;
+
+    --card: 260 20% 17%;
+    --card-foreground: 0 0% 96%;
+
+    --popover: 260 20% 17%;
+    --popover-foreground: 0 0% 96%;
+
+    --primary: 260 55% 62%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 255 18% 20%;
+    --secondary-foreground: 0 0% 90%;
+
+    --muted: 255 16% 16%;
+    --muted-foreground: 250 12% 50%;
+
+    --accent: 320 50% 58%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 260 16% 22%;
+    --input: 260 16% 22%;
+    --ring: 260 55% 62%;
+
+    --radius: 0.75rem;
+
+    /* Multi-color brand palette */
+    --gradient-start: 270 60% 55%;
+    --gradient-mid: 320 50% 58%;
+    --gradient-end: 20 75% 60%;
+
+    /* Extended palette */
+    --brand-orange: 25 90% 58%;
+    --brand-yellow: 42 92% 60%;
+    --brand-teal: 175 55% 45%;
+    --brand-coral: 8 80% 62%;
+    --brand-lime: 95 50% 50%;
+
+    /* Glass effect */
+    --glass: 260 22% 18%;
+    --glass-border: 260 20% 28%;
+
+    /* Glow colors — expanded */
+    --glow-blue: 220 65% 58%;
+    --glow-purple: 270 60% 55%;
+    --glow-cyan: 185 55% 50%;
+    --glow-pink: 320 50% 58%;
+    --glow-peach: 20 75% 60%;
+    --glow-orange: 25 90% 58%;
+    --glow-yellow: 42 92% 60%;
+    --glow-teal: 175 55% 45%;
+
+    --sidebar-background: 260 25% 12%;
+    --sidebar-foreground: 0 0% 96%;
+    --sidebar-primary: 260 55% 62%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 255 18% 20%;
+    --sidebar-accent-foreground: 0 0% 96%;
+    --sidebar-border: 260 16% 22%;
+    --sidebar-ring: 260 55% 62%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  .font-body {
+    font-family: 'Inter', sans-serif;
+  }
+  .gradient-brand {
+    background: linear-gradient(135deg, hsl(var(--glow-purple)), hsl(var(--glow-pink)), hsl(var(--brand-orange)));
+  }
+  .gradient-warm {
+    background: linear-gradient(135deg, hsl(var(--brand-orange)), hsl(var(--brand-yellow)), hsl(var(--brand-coral)));
+  }
+  .gradient-cool {
+    background: linear-gradient(135deg, hsl(var(--glow-blue)), hsl(var(--glow-teal)), hsl(var(--glow-cyan)));
+  }
+  .gradient-sunset {
+    background: linear-gradient(135deg, hsl(var(--glow-pink)), hsl(var(--brand-orange)), hsl(var(--brand-yellow)));
+  }
+  .gradient-brand-subtle {
+    background: linear-gradient(135deg, hsl(var(--glow-purple) / 0.15), hsl(var(--glow-pink) / 0.15), hsl(var(--brand-orange) / 0.1));
+  }
+  .gradient-brand-text {
+    background: linear-gradient(135deg, hsl(var(--glow-purple)), hsl(var(--glow-pink)), hsl(var(--brand-orange)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .gradient-warm-text {
+    background: linear-gradient(135deg, hsl(var(--brand-orange)), hsl(var(--brand-yellow)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .gradient-cool-text {
+    background: linear-gradient(135deg, hsl(var(--glow-blue)), hsl(var(--glow-teal)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .glass-card {
+    background: hsl(var(--glass) / 0.45);
+    border: 1px solid hsl(var(--glass-border) / 0.3);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+  }
+  .glass-card-strong {
+    background: hsl(var(--glass) / 0.7);
+    border: 1px solid hsl(var(--glass-border) / 0.4);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+  }
+  .glass-pill {
+    background: hsl(var(--glass) / 0.4);
+    border: 1px solid hsl(var(--glass-border) / 0.2);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+  .glass-white {
+    background: hsl(0 0% 100% / 0.06);
+    border: 1px solid hsl(0 0% 100% / 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+  .glow-blue {
+    box-shadow: 0 0 20px hsl(var(--glow-blue) / 0.3), 0 0 60px hsl(var(--glow-blue) / 0.1);
+  }
+  .glow-purple {
+    box-shadow: 0 0 20px hsl(var(--glow-purple) / 0.3), 0 0 60px hsl(var(--glow-purple) / 0.1);
+  }
+  .glow-cyan {
+    box-shadow: 0 0 20px hsl(var(--glow-cyan) / 0.3), 0 0 60px hsl(var(--glow-cyan) / 0.1);
+  }
+  .glow-pink {
+    box-shadow: 0 0 20px hsl(var(--glow-pink) / 0.3), 0 0 60px hsl(var(--glow-pink) / 0.1);
+  }
+  .glow-orange {
+    box-shadow: 0 0 20px hsl(var(--brand-orange) / 0.3), 0 0 60px hsl(var(--brand-orange) / 0.1);
+  }
+  .glow-teal {
+    box-shadow: 0 0 20px hsl(var(--glow-teal) / 0.3), 0 0 60px hsl(var(--glow-teal) / 0.1);
+  }
+  .text-glow {
+    text-shadow: 0 0 20px hsl(var(--glow-purple) / 0.5);
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .bg-mesh {
+    background-image:
+      radial-gradient(ellipse at 10% 0%, hsl(var(--glow-purple) / 0.18) 0%, transparent 45%),
+      radial-gradient(ellipse at 90% 10%, hsl(var(--glow-pink) / 0.14) 0%, transparent 40%),
+      radial-gradient(ellipse at 70% 40%, hsl(var(--brand-orange) / 0.1) 0%, transparent 40%),
+      radial-gradient(ellipse at 30% 60%, hsl(var(--glow-teal) / 0.08) 0%, transparent 45%),
+      radial-gradient(ellipse at 85% 70%, hsl(var(--brand-yellow) / 0.06) 0%, transparent 35%),
+      radial-gradient(ellipse at 15% 85%, hsl(var(--glow-blue) / 0.1) 0%, transparent 40%),
+      radial-gradient(ellipse at 50% 95%, hsl(var(--glow-pink) / 0.08) 0%, transparent 45%);
+  }
+}
